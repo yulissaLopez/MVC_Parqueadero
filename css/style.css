@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+.form_style{
+    max-width: 400px;
+    margin: 25px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],input[type="email"], select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+button {
+    width: 100%;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+fieldset {
+    border: none; 
+    padding: 0px; 
+}
+
+label {
+    display: block; 
+    margin-bottom: 5px;
+    font-weight: bold; 
+    color: #333; 
+}
+
+#contTabla{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Estilo para las filas alternas */
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* Estilo para la última fila */
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Estilo para las filas al pasar el cursor */
+table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+#contenedor{
+    display: none;
+}
+
+.contenedorVerificar {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+#placa {
+    flex: 1; /* Permite que el campo de texto tome el espacio disponible */
+    padding: 10px; /* Espaciado interior para un mejor aspecto */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 0px;
+}
+
+#btnVerificar {
+    padding: 10px 20px; /* Espaciado interior */
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+}
+
+#btnVerificar:hover {
+    background-color: #45a049; /* Color de fondo al pasar sobre el botón */
+}

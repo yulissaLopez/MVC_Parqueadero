@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL PARQUEADERO</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/vehiculo.js"></script>
+</head>
+<body>
+    <h1>Formulario de registro de vehiculos</h1>
+    <form id="form_registro" class="form_style">
+        <!--Campos del formulario-->
+        <label for="tipo">Tipo  </label>
+        <select id="tipo">
+            <option value="moto">Moto</option>
+            <option value="carro">Carro</option>
+        </select>
+        <br>
+        <label for="placa">Placa</label>
+        <div class="contenedorVerificar">
+            <input type="text" id="placa" placeholder="###-###" required>
+            <input type="button" value="Verificar" id="btnVerificar">
+        </div>
+
+        <fieldset id="campos" style="display: none;">
+            
+            <label for="marca">Marca</label>
+            <input type="text" id="marca" value="" required>
+    
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" required>
+
+            <label for="servicio">Servicios</label>
+            <select id="servicio" required>
+                <option value="dia">Dia</option>
+                <option value="hora">Hora</option>
+                <option value="mes">Mensual</option>
+            </select>
+    
+            <button type="button" id="btnEnviar">Registrar Vehiculo Y entrada </button> 
+            <!--Agregar boton de cancelar-->
+        </fieldset>
+    
+    </form>
+    
+    <div id="contenedor">
+        <h2>Registro de Usuario</h2>
+        <form id="formUsuario"class="form_style">
+               
+            <label for="idUsu">Documento:<label>
+            <input type="text" id="idUsu" name="idUsu"required>
+               
+            <label for="nombre">Nombre de usuario:</label>
+            <input type="text" id="nombre"name="nombre" required>
+                
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email"required>
+                
+            <button type="button" id="btnRegistroUsu">Registrar Usuario</button>
+        </form>
+        
+    </div>
+ 
+
+    
+    <div id="contTabla">
+        <table id="tablaVehiculos">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Placa</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTablaVehiculos"></tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
