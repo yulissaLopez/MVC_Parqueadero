@@ -1,0 +1,17 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# Entornos específicos
+.env
+
+# Archivos de construcción
+/build/
+*.log
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
