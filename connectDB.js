@@ -19,10 +19,10 @@ conexion.connect((err)=>{
 })
 
 //agregar datos 
-const placa = 'ABR-890';
-const tipo = 'carro';
-const marca ='MAZDA'
-const modelo = '2025';
+const placa = 'MBR-896';
+const tipo = 'moto';
+const marca ='SUZUKI'
+const modelo = '2022';
 
 const sqlSentence = "insert into vehiculo (placa, tipo, marca, modelo) value (?,?,?,?)"
 
@@ -47,6 +47,7 @@ conexion.query('SELECT * FROM vehiculo', (err,results,fields)=>{
 conexion.end();
 
 // PA QUE ESTA VAINA MENDIO FUNCIONE
+// npm init para crear el .json
 // Hacer una base de datos prueba con los datos de la conexion
 // Verificar que node esta instalado e instalar el modulo npm install mysql2
 // Ejecutar el archivo con node nombre archivo
