@@ -3,6 +3,7 @@ import { validarPlaca } from "./validarPlaca.js";
 import { mostrarDisplay, ocultarDisplay } from "./cambiarDisplay.js";
 import {UsuarioController } from "./usuario.js";
 
+
 class Vehiculo{
   // Modelo del vehiculo 
   // Logica del negocio y comunicacion con los datos
@@ -163,12 +164,31 @@ class VehicleController {
     // Crear un nuevo Vehiculo
     const vehiculo = new Vehiculo(tipo, placa, marca, modelo);
 
-    // Agrego el vehiculo al con el metodo agregar del modelo
-    this.modeloVehiculo.agregarVehiculo(vehiculo);
-    this.vista.mostrarTablaVehiculos(vehiculo);
+    // Enviar los datos al servidor
+    fetch('http://localhost:3000/vehiculo', {
+      method: 'POST',
+      headers: {
+        'content-Type' : 'application/json'
+      },
+      body: JSON.stringify(vehiculo)
+    })
+    .then(response => {
+      if (response.ok){
+        return response.json()
+      }
 
-    //console.log("Vehiculo Agregado con Exito");
-    this.vista.reiniciarVista();
+      throw new Error('Error en la solictud');
+    })
+    .then(data => {
+      console.log("Vehiculo Agregado con exito", data)
+      this.modeloVehiculo.agregarVehiculo(vehiculo);
+      this.vista.mostrarTablaVehiculos(vehiculo);
+      this.vista.reiniciarVista();
+    })
+    .catch(error =>{
+      console.error('Error:', error);
+    })
+
   }
 }
 
