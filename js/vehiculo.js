@@ -165,6 +165,7 @@ class VehicleController {
     const vehiculo = new Vehiculo(tipo, placa, marca, modelo);
 
     // Enviar los datos al servidor
+    // Devuelve una promesa
     fetch('http://localhost:3000/vehiculo', {
       method: 'POST',
       headers: {

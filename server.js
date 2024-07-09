@@ -18,14 +18,16 @@ conexion.connect((err)=>{
         console.error('Error de conexion ' + err.stack);
         return;
     }
-    console.log('Conexio exitosa' + conexion.threadId);
+    console.log('Conexio exitosa ' + conexion.threadId);
 })
 
+// Creo una instancia de express
 const app = express();
 const port = 3000;
 
 //Middleware
 app.use(cors()); // Permite solicitudes desde cualquier origen
+//Parsea el cuerpo de las solicitudes HTTP como json
 app.use(bodyParser.json())
 
 // Ruta para insertar datos en base de datos
@@ -48,6 +50,9 @@ app.post('/vehiculo',( req, res) =>{
 
 });
 
+// Inicializa el servidor HTTP 
+// El metodo listen escucha el puerto especificado 
+// Cuando el servidor se incia correctamente y el callback se ejecuta
 app.listen(port, () =>{
     console.log(`Servidor corriendo en http://localhost:${port}`)
 });
